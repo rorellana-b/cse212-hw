@@ -8,12 +8,13 @@ public static class Arrays
     /// <returns>array of doubles that are the multiples of the supplied number</returns>
     public static double[] MultiplesOf(double number, int length)
     {
-        // TODO Problem 1 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
-
-        return []; // replace this return statement with your own
+        // TODO Problem 1 Start        
+        double[] multiples = new double[length];//Creating an array of doubles with the specified length.
+        for (int i = 0; i < length; i++)//Using loop to fill the array with multiples of the given number.
+        {
+            multiples[i] = number * (i + 1); //Each element is assigned the value of number multiplied by (i + 1) to get the correct multiple.
+        }
+        return multiples; //Return the filled array.   
     }
 
     /// <summary>
@@ -26,8 +27,18 @@ public static class Arrays
     public static void RotateListRight(List<int> data, int amount)
     {
         // TODO Problem 2 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
+        amount = amount % data.Count; // Handle cases where amount is greater 
+
+        if (amount == 0) return; // No rotation needed if amount is 0
+
+        // We can use GetRange to split the list into two parts.
+        //those methods will return a new list containing the specified range of elements. without modifying the original list and witout using loops.
+
+        List<int> rotatedPart = data.GetRange(data.Count - amount, amount); // using method GetRange to get the last 'amount' elements
+        List<int> remainingPart = data.GetRange(0, data.Count - amount);// using method GetRange to get the rest of the elements
+
+        data.Clear(); // Clear the original list to prepare for the new order
+        data.AddRange(rotatedPart); // Add the rotated part first
+        data.AddRange(remainingPart); // Add the remaining part after the rotated part
     }
 }
