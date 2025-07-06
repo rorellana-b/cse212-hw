@@ -27,7 +27,7 @@ public static class Arrays
     public static void RotateListRight(List<int> data, int amount)
     {
         // TODO Problem 2 Start
-        amount = amount % data.Count; // Handle cases where amount is greater 
+        amount = amount % data.Count; // Handle cases where amount is greater to avoid unnecessary rotations
 
         if (amount == 0) return; // No rotation needed if amount is 0
 
