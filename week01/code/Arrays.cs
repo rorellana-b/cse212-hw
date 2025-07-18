@@ -42,3 +42,9 @@ public static class Arrays
         data.AddRange(remainingPart); // Add the remaining part after the rotated part
     }
 }
+
+//What was the most interesting thing from this week's lesson, or what accomplishment from this week are you the most proud of?
+// I found the use of the GetRange method in the RotateListRight function particularly interesting. It allows for a clean and efficient way to manipulate lists without needing to write complex loops, making the code more readable and maintainable. Additionally, I am proud of successfully implementing the MultiplesOf function, which demonstrates my understanding of array manipulation and basic arithmetic operations.
+// I also enjoyed the challenge of ensuring that the RotateListRight function correctly handles cases where the amount of rotation exceeds the size of the list, which required a thoughtful approach to avoid unnecessary computations.
+
+// I learned using arrayList and how to use the GetRange method to manipulate lists in C#. This method simplifies the process of extracting sublists without needing to manually iterate through the elements, making the code cleaner and more efficient. Additionally, I learned how to handle edge cases, such as when the rotation amount exceeds the list size, by using the modulo operator to ensure that the rotation is always within valid bounds.
