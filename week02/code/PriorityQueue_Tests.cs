@@ -6,23 +6,30 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 public class PriorityQueueTests
 {
     [TestMethod]
-    // Scenario: 
-    // Expected Result: 
-    // Defect(s) Found: 
+    // Scenario: view the priority queue in order of priority
+    // Expected Result: returns items in order of priority, highest first
+    // Defect(s) Found: in the priority queue implementation, the items are not being sorted correctly
+
     public void TestPriorityQueue_1()
     {
         var priorityQueue = new PriorityQueue();
-        Assert.Fail("Implement the test case and then remove this.");
+        priorityQueue.Enqueue("Low", 1);
+        priorityQueue.Enqueue("Medium", 5);
+        priorityQueue.Enqueue("High", 10);
+
+        Assert.AreEqual("High", priorityQueue.Dequeue());
+        Assert.AreEqual("Medium", priorityQueue.Dequeue());
+        Assert.AreEqual("Low", priorityQueue.Dequeue());
     }
 
     [TestMethod]
-    // Scenario: 
-    // Expected Result: 
-    // Defect(s) Found: 
+    // Scenario: try to dequeue from an empty priority queue
+    // Expected Result: invalid operation exception is thrown
+    // Defect(s) Found: None, this is the expected behavior
     public void TestPriorityQueue_2()
     {
         var priorityQueue = new PriorityQueue();
-        Assert.Fail("Implement the test case and then remove this.");
+        Assert.ThrowsException<InvalidOperationException>(() => priorityQueue.Dequeue());
     }
 
     // Add more test cases as needed below.
