@@ -41,7 +41,7 @@ public class TakingTurnsQueue
         {
             Person person = _people.Dequeue();
 
-            if (person.Turns <= 0)
+            if (person.Turns <= 0) // Change it for infinite turns 
             {
                 _people.Enqueue(person);
             }
